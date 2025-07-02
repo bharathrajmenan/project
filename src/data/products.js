@@ -1,0 +1,123 @@
+const products = [
+  // Apple
+  { id: 1, name: "iPhone 15 Pro Max", category: "Apple", price: 1199, image: "./img/iphone/iphone.jpeg" },
+  { id: 2, name: "iPhone 15 Pro", category: "Apple", price: 1099, image: "./img/iphone/iphone.jpeg" },
+  { id: 3, name: "iPhone 15", category: "Apple", price: 899, image: "./img/iphone/15.jpeg" },
+  { id: 4, name: "iPhone 14", category: "Apple", price: 799, image: "./img/iphone/14.jpeg" },
+  { id: 5, name: "iPhone 13", category: "Apple", price: 699, image: "./img/iphone/13.jpeg" },
+  { id: 6, name: "iPhone SE (2022)", category: "Apple", price: 429, image: "./img/iphone/se.jpeg" },
+  { id: 7, name: "iPhone 15 Plus", category: "Apple", price: 999, image: "./img/iphone/15+.jpeg" },
+  { id: 8, name: "iPhone 14 Plus", category: "Apple", price: 899, image: "./img/iphone/14+.jpeg" },
+  { id: 9, name: "iPhone 13 Mini", category: "Apple", price: 599, image: "./img/iphone/13mini.jpeg" },
+  { id: 10, name: "iPhone 12", category: "Apple", price: 599, image: "./img/iphone/download.jpeg" },
+
+  // Samsung
+  { id: 11, name: "Galaxy S24 Ultra", category: "Samsung", price: 1199, image: "./img/samsung/s24.jpeg" },
+  { id: 12, name: "Galaxy S24+", category: "Samsung", price: 999, image: "./img/samsung/s24+.jpeg" },
+  { id: 13, name: "Galaxy S24", category: "Samsung", price: 899, image: "./img/samsung/s24u.jpeg" },
+  { id: 14, name: "Galaxy Z Fold 6", category: "Samsung", price: 1799, image: "./img/samsung/zfold.jpeg" },
+  { id: 15, name: "Galaxy Z Flip 6", category: "Samsung", price: 999, image: "./img/samsung/zflip.jpeg" },
+  { id: 16, name: "Galaxy A74", category: "Samsung", price: 499, image: "./img/samsung/a74.jpeg" },
+  { id: 17, name: "Galaxy A54", category: "Samsung", price: 399, image: "./img/samsung/a54.jpeg" },
+  { id: 18, name: "Galaxy M14", category: "Samsung", price: 199, image: "./img/samsung/m14.jpeg" },
+  { id: 19, name: "Galaxy A14", category: "Samsung", price: 149, image: "./img/samsung/a14.jpeg" },
+  { id: 20, name: "Galaxy F54", category: "Samsung", price: 299, image: "./img/samsung/f54.jpeg" },
+
+  // Xiaomi
+  { id: 21, name: "Xiaomi 14 Ultra", category: "Xiaomi", price: 999, image: "./img/xiomi/x14p.jpeg" },
+  { id: 22, name: "Xiaomi 14 Pro", category: "Xiaomi", price: 899, image: "./img/xiomi/x14.jpeg" },
+  { id: 23, name: "Redmi Note 13 Pro+", category: "Xiaomi", price: 399, image: "./img/xiomi/x13.jpeg" },
+  { id: 24, name: "Redmi Note 13", category: "Xiaomi", price: 299, image: "./img/xiomi/x13.jpeg" },
+  { id: 25, name: "Redmi 12 5G", category: "Xiaomi", price: 199, image: "./img/xiomi/red12.jpeg" },
+  { id: 26, name: "Xiaomi 13T Pro", category: "Xiaomi", price: 699, image: "./img/xiomi/13t.jpeg" },
+  { id: 27, name: "Redmi K70", category: "Xiaomi", price: 449, image: "./img/xiomi/k70.jpeg" },
+  { id: 28, name: "POCO X6 Pro", category: "Xiaomi", price: 299, image: "./img/xiomi/poco.jpeg" },
+  { id: 29, name: "POCO F5", category: "Xiaomi", price: 379, image: "./img/xiomi/f5.jpeg" },
+  { id: 30, name: "Mi 11X", category: "Xiaomi", price: 399, image: "./img/xiomi/11x.jpeg" },
+
+  // Oppo
+  { id: 31, name: "Oppo Find X7 Ultra", category: "Oppo", price: 999, image: "./img/oppo/x7.jpeg" },
+  { id: 32, name: "Oppo Find X6", category: "Oppo", price: 899, image: "./img/oppo/x6.jpeg" },
+  { id: 33, name: "Oppo Reno 11 Pro", category: "Oppo", price: 599, image: "./img/oppo/11p.jpeg" },
+  { id: 34, name: "Oppo Reno 11", category: "Oppo", price: 499, image: "./img/oppo/11.jpeg" },
+  { id: 35, name: "Oppo A79 5G", category: "Oppo", price: 299, image: "./img/oppo/A79.jpeg" },
+  { id: 36, name: "Oppo A78", category: "Oppo", price: 249, image: "./img/oppo/a78.jpeg" },
+  { id: 37, name: "Oppo F25 Pro", category: "Oppo", price: 349, image: "./img/oppo/f25.jpeg" },
+  { id: 38, name: "Oppo K12", category: "Oppo", price: 279, image: "./img/oppo/k12.jpeg" },
+  { id: 39, name: "Oppo A59", category: "Oppo", price: 199, image: "./img/oppo/a59.jpeg" },
+  { id: 40, name: "Oppo A18", category: "Oppo", price: 159, image: "./img/oppo/a18.jpeg" },
+
+  // Vivo
+  { id: 41, name: "Vivo X100 Pro", category: "Vivo", price: 1099, image: "./img/vivo/x100.jpeg" },
+  { id: 42, name: "Vivo X100", category: "Vivo", price: 999, image: "./img/vivo/x100p.jpeg" },
+  { id: 43, name: "Vivo V30 Pro", category: "Vivo", price: 599, image: "./img/vivo/v30.jpeg" },
+  { id: 44, name: "Vivo V30", category: "Vivo", price: 499, image: "./img/vivo/v30.jpeg" },
+  { id: 45, name: "Vivo T3 5G", category: "Vivo", price: 349, image: "./img/vivo/t3.jpeg" },
+  { id: 46, name: "Vivo Y200", category: "Vivo", price: 299, image: "./img/vivo/y100.jpeg" },
+  { id: 47, name: "Vivo Y100A", category: "Vivo", price: 319, image: "./img/vivo/y100.jpeg" },
+  { id: 48, name: "Vivo Y18", category: "Vivo", price: 199, image: "./img/vivo/v30.jpeg" },
+  { id: 49, name: "Vivo Y27", category: "Vivo", price: 249, image: "./img/vivo/y27.jpeg" },
+  { id: 50, name: "Vivo T2 Pro", category: "Vivo", price: 279, image: "./img/vivo/t2p.jpeg" },
+
+  // OnePlus
+  { id: 51, name: "OnePlus 12", category: "OnePlus", price: 799, image: "./img/oneplus/12.jpeg" },
+  { id: 52, name: "OnePlus 12R", category: "OnePlus", price: 599, image: "./img/oneplus/12r.jpeg" },
+  { id: 53, name: "OnePlus Nord CE 4", category: "OnePlus", price: 399, image: "./img/oneplus/ce.jpeg" },
+  { id: 54, name: "OnePlus Nord 3", category: "OnePlus", price: 499, image: "./img/oneplus/n3.jpeg" },
+  { id: 55, name: "OnePlus Nord CE 3 Lite", category: "OnePlus", price: 299, image: "./img/oneplus/nce.jpeg" },
+  { id: 56, name: "OnePlus 11", category: "OnePlus", price: 699, image: "./img/oneplus/11.jpeg" },
+  { id: 57, name: "OnePlus Nord 2T", category: "OnePlus", price: 349, image: "./img/oneplus/2t.jpeg" },
+  { id: 58, name: "OnePlus Nord N30", category: "OnePlus", price: 279, image: "./img/oneplus/n30.jpeg" },
+  { id: 59, name: "OnePlus Ace 3V", category: "OnePlus", price: 429, image: "./img/oneplus/3v.jpeg" },
+  { id: 60, name: "OnePlus Ace Pro", category: "OnePlus", price: 649, image: "./img/oneplus/acep.jpeg" },
+
+  // Realme
+  { id: 61, name: "Realme GT 6", category: "Realme", price: 699, image: "./img/realme/gt6.jpeg" },
+  { id: 62, name: "Realme GT Neo 6", category: "Realme", price: 599, image: "./img/realme/neo.jpeg" },
+  { id: 63, name: "Realme Narzo 70 Pro", category: "Realme", price: 349, image: "./img/realme/70.jpeg" },
+  { id: 64, name: "Realme Narzo 60", category: "Realme", price: 299, image: "./img/realme/60.jpeg" },
+  { id: 65, name: "Realme 12 Pro+", category: "Realme", price: 379, image: "./img/realme/12.jpeg" },
+  { id: 66, name: "Realme 12+", category: "Realme", price: 299, image: "./img/realme/12.jpeg" },
+  { id: 67, name: "Realme C67", category: "Realme", price: 199, image: "./img/realme/c67.jpeg" },
+  { id: 68, name: "Realme 11x", category: "Realme", price: 229, image: "./img/realme/11x.jpeg" },
+  { id: 69, name: "Realme Narzo N53", category: "Realme", price: 159, image: "./img/realme/n53.jpeg" },
+  { id: 70, name: "Realme C55", category: "Realme", price: 189, image: "./img/realme/c55.jpeg" },
+
+  // Motorola
+  { id: 71, name: "Motorola Edge 50 Ultra", category: "Motorola", price: 699, image: "./img/motorola/e50.jpeg" },
+  { id: 72, name: "Motorola Edge 50 Pro", category: "Motorola", price: 599, image: "./img/motorola/e50.jpeg" },
+  { id: 73, name: "Moto G73", category: "Motorola", price: 299, image: "./img/motorola/g73.jpeg" },
+  { id: 74, name: "Moto G84", category: "Motorola", price: 269, image: "./img/motorola/g84.jpeg" },
+  { id: 75, name: "Moto G32", category: "Motorola", price: 199, image: "./img/motorola/g32.jpeg" },
+  { id: 76, name: "Moto E13", category: "Motorola", price: 119, image: "./img/motorola/e13.jpeg" },
+  { id: 77, name: "Moto Edge 40", category: "Motorola", price: 349, image: "./img/motorola/e40.jpeg" },
+  { id: 78, name: "Moto G54", category: "Motorola", price: 229, image: "./img/motorola/g54.jpeg" },
+  { id: 79, name: "Moto G13", category: "Motorola", price: 179, image: "./img/motorola/g13p.jpeg" },
+  { id: 80, name: "Razr 50 Ultra", category: "Motorola", price: 999, image: "./img/motorola/razr.jpeg" },
+
+  // Google
+  { id: 81, name: "Pixel 8 Pro", category: "Google", price: 999, image: "./img/pixel/p8pro.jpeg" },
+  { id: 82, name: "Pixel 8", category: "Google", price: 799, image: "./img/pixel/p8.jpeg" },
+  { id: 83, name: "Pixel 8a", category: "Google", price: 499, image: "./img/pixel/p8a.jpeg" },
+  { id: 84, name: "Pixel Fold", category: "Google", price: 1799, image: "./img/pixel/fold.jpeg" },
+  { id: 85, name: "Pixel 7a", category: "Google", price: 399, image: "./img/pixel/7a.jpeg" },
+  { id: 86, name: "Pixel 7", category: "Google", price: 599, image: "./img/pixel/7a.jpeg" },
+  { id: 87, name: "Pixel 6a", category: "Google", price: 349, image: "./img/pixel/6a.jpeg" },
+  { id: 88, name: "Pixel 6", category: "Google", price: 449, image: "./img/pixel/6a.jpeg" },
+  { id: 89, name: "Pixel 5", category: "Google", price: 399, image: "./img/pixel/5.jpeg" },
+  { id: 90, name: "Pixel 4a", category: "Google", price: 299, image: "./img/pixel/4.jpeg" },
+
+  // Huawei
+  { id: 91, name: "Mate 60 Pro", category: "Huawei", price: 999, image: "./img/huawei/60.jpeg" },
+  { id: 92, name: "Mate 60", category: "Huawei", price: 899, image: "./img/huawei/60.jpeg" },
+  { id: 93, name: "P60 Pro", category: "Huawei", price: 799, image: "./img/huawei/p60.jpeg" },
+  { id: 94, name: "P60", category: "Huawei", price: 699, image: "./img/huawei/p60.jpeg" },
+  { id: 95, name: "Nova 12 Pro", category: "Huawei", price: 499, image: "./img/huawei/12.jpeg" },
+  { id: 96, name: "Nova 12", category: "Huawei", price: 399, image: "./img/huawei/12.jpeg" },
+  { id: 97, name: "Enjoy 70", category: "Huawei", price: 299, image: "./img/huawei/70.jpeg" },
+  { id: 98, name: "Nova 11i", category: "Huawei", price: 349, image: "./img/huawei/11i.jpeg" },
+  { id: 99, name: "Nova 11 SE", category: "Huawei", price: 379, image: "./img/huawei/11s.jpeg" },
+  { id: 100, name: "Huawei P50 Pocket", category: "Huawei", price: 1099, image: "./img/huawei/p50.jpeg" },
+];
+
+export default products;
