@@ -284,3 +284,14 @@ select {
     margin-top: 1rem;
   }
 }
+
+@media (max-width: 500px) {
+  .cart-summary {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .reset-btn {
+    width: 100%;
+  }
+}

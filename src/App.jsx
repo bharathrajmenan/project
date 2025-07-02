@@ -12,34 +12,64 @@ import "./index.css";
 import Marquee from "./components/Marquee";
 
 function AppContent() {
-  const location = useLocation(); // <-- useLocation hook here
+  const location = useLocation();
 
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("");
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(() => {
+    // Load cart from localStorage if available
+    const saved = localStorage.getItem("cart");
+    return saved ? JSON.parse(saved) : [];
+  });
 
   const filteredProducts = productsData.filter((product) =>
     product.name.toLowerCase().includes(search.toLowerCase()) &&
     (category === "" || product.category === category)
   );
 
-  const addToCart = (product) => setCart([...cart, product]);
+  const addToCart = (product) => {
+    const updatedCart = [...cart, product];
+    setCart(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+  };
+
+  const resetCart = () => {
+    if (window.confirm("Are you sure you want to reset the cart?")) {
+      setCart([]);
+      localStorage.removeItem("cart");
+    }
+  };
 
   return (
     <div className="app">
-      <Header search={search} setSearch={setSearch} category={category} setCategory={setCategory} />
+      <Header
+        search={search}
+        setSearch={setSearch}
+        category={category}
+        setCategory={setCategory}
+      />
+
       <Routes>
-        <Route path="/" element={<><Home /><ProductList products={filteredProducts} addToCart={addToCart} /></>} />
+        <Route
+          path="/"
+          element={
+            <>
+              <Home />
+              <ProductList products={filteredProducts} addToCart={addToCart} />
+            </>
+          }
+        />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-      {/* Render CartSummary and Marquee only on Home route */}
+
       {location.pathname === "/" && (
         <>
-          <CartSummary cart={cart} />
+          <CartSummary cart={cart} onReset={resetCart} />
           <Marquee />
         </>
       )}
+
       <Footer />
     </div>
   );
