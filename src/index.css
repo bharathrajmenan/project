@@ -14,17 +14,21 @@
 
 body {
   font-family: 'MyFont', sans-serif;
+/* background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); */
 }
 
 
 body {
   margin: 0;
   font-family: 'MyFont';
-  background:#ffffff;
+  /* background:#ffffff; */
+ background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+
+
 }
 
 .header {
-  background-color: #1f2839;
+  background-color: #003153;
   color: #ffffff;
   padding: 1rem;
   display: flex;
@@ -90,7 +94,7 @@ body {
 }
 
 .card button {
-  background-color: #004080;
+  background-color: #d13e19;
   color: white;
   padding: 0.5rem 1rem;
   border: none;
@@ -114,13 +118,13 @@ body {
 .footer {
   text-align: center;
   padding: 1rem;
-  background-color: #1f2839;
+  background-color: #003153;
   color: #ffffff;
   margin-top: 2rem;
 }
 
 .slideshow {
-  width: 100vw; /* full viewport width */
+  width: 100%; /* full viewport width */
   max-height: 250px;
   overflow: hidden;
   margin: 0 auto;
